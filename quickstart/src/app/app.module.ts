@@ -3,14 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms'; //con esto añadimos la librería para interactuar con elementos de un formulario
 
 import { AppComponent }  from './app.component';
+import { HeroDetailComponent } from './hero-detail.component';
 
 @NgModule({
-  imports:      [ BrowserModule ,
+  imports:[ BrowserModule ,
   FormsModule
   ],
   declarations: [ 
-    AppComponent 
+    AppComponent,
+    HeroDetailComponent
   ],
-  bootstrap:    [ AppComponent ]
+  bootstrap:[ AppComponent ]
 })
 export class AppModule { }
