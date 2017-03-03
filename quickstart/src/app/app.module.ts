@@ -4,15 +4,29 @@ import { FormsModule } from '@angular/forms'; //con esto añadimos la librería 
 
 import { AppComponent }  from './app.component';
 import { HeroDetailComponent } from './hero-detail.component';
+import { HeroesComponent } from './heroes.component';
+import { HeroService } from './hero.service';
+import { DashboardComponent } from './dashboard.component';
+
+import { AppRoutingModule } from './app-routing.module'; //injección de la lógica de ruteo
 
 @NgModule({
-  imports:[ BrowserModule ,
-  FormsModule
+  imports:[ 
+    BrowserModule ,
+    FormsModule,
+    AppRoutingModule, // ahora todo el ruteo lo coge a través del módulo AppRouting injectado
   ],
   declarations: [ 
     AppComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
+    HeroesComponent,
+    DashboardComponent,
   ],
-  bootstrap:[ AppComponent ]
+  providers:[
+    HeroService
+  ],
+  bootstrap:[ AppComponent ],
+  
 })
+
 export class AppModule { }
