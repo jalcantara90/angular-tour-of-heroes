@@ -11,21 +11,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms'); //con esto añadimos la librería para interactuar con elementos de un formulario
+var http_1 = require('@angular/http');
+var app_routing_module_1 = require('./app-routing.module'); //injección de la lógica de ruteo
+// Imports for loading & configurin the in-memory web api 
+var angular_in_memory_web_api_1 = require('angular-in-memory-web-api');
+var in_memory_data_service_1 = require('./in-memory-data.service');
 var app_component_1 = require('./app.component');
 var hero_detail_component_1 = require('./hero-detail.component');
 var heroes_component_1 = require('./heroes.component');
 var hero_service_1 = require('./hero.service');
 var dashboard_component_1 = require('./dashboard.component');
-var app_routing_module_1 = require('./app-routing.module'); //injección de la lógica de ruteo
+var hero_search_component_1 = require('./hero-search.component');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        //injección de la lógica de ruteo
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
+                http_1.HttpModule,
+                angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService),
                 app_routing_module_1.AppRoutingModule,
             ],
             declarations: [
@@ -33,6 +39,7 @@ var AppModule = (function () {
                 hero_detail_component_1.HeroDetailComponent,
                 heroes_component_1.HeroesComponent,
                 dashboard_component_1.DashboardComponent,
+                hero_search_component_1.HeroSearchComponent,
             ],
             providers: [
                 hero_service_1.HeroService
